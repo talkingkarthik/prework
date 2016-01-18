@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 todolist.add(new ToDoItem("Default Title", "Default Note",
-                                                       (new Date()), false, true, null));
+                        (new Date()), false, true, null));
                 adapter.notifyDataSetChanged();
                 adapter.showEditDialog(todolist.size() - 1);
             }

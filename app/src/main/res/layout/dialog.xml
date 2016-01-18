@@ -1,57 +1,64 @@
 <!-- fragment_edit_name.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/edit_name"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_gravity="center" android:orientation="vertical"  >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/textView1"
-        android:text="Title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Title" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:imeOptions="actionDone" />
+        android:imeOptions="actionDone"
+        android:inputType="text" />
 
     <TextView
-        android:id="@+id/lbl_your_name" android:text="Notes"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        android:id="@+id/lbl_your_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes" />
 
     <EditText
         android:id="@+id/txt_your_name"
-        android:layout_width="match_parent"  android:layout_height="wrap_content"
-        android:inputType="text"
-        android:imeOptions="actionDone" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="text" />
 
     <TextView
-        android:id="@+id/lbl_your_name1" android:text="Due"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
-
-    <TimePicker
+        android:id="@+id/lbl_your_name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker" />
+        android:text="Due" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
     <CheckBox
+        android:id="@+id/highpri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="High Priority"
-        android:id="@+id/highpri"
-        android:checked="false" />
+        android:checked="false"
+        android:text="High Priority" />
 
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_gravity="right"
         android:layout_marginRight="10dp"
-        android:text="Save"
-        android:layout_gravity="right" />
+        android:text="Save" />
 
 </LinearLayout>

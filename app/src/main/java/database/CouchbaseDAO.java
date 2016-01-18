@@ -27,18 +27,12 @@ public class CouchbaseDAO {
 
     final static String TAG = "CouchbaseEvents";
     final static String DB_NAME = "todopersist1";
+    private static CouchbaseDAO instance = null;
     private Manager manager = null;
     private Database database = null;
-    private static CouchbaseDAO instance = null;
 
-    private void CouchbaseDAO ()
-    {
-        //Singleton!
-    }
-    public static CouchbaseDAO getInstance (Context ctx)
-    {
-        if (instance == null)
-        {
+    public static CouchbaseDAO getInstance(Context ctx) {
+        if (instance == null) {
             instance = new CouchbaseDAO();
             try {
                 instance.manager = new Manager(new AndroidContext(ctx), Manager.DEFAULT_OPTIONS);
@@ -50,7 +44,12 @@ public class CouchbaseDAO {
         }
         return instance;
     }
-    public String createDocument( String title, String text, Date time, boolean pri) {
+
+    private void CouchbaseDAO() {
+        //Singleton!
+    }
+
+    public String createDocument(String title, String text, Date time, boolean pri) {
         Document document = database.createDocument();
         String documentId = document.getId();
         Map<String, Object> map = new HashMap<String, Object>();
@@ -67,7 +66,7 @@ public class CouchbaseDAO {
         return documentId;
     }
 
-    public void deleteDocument (String id) {
+    public void deleteDocument(String id) {
         try {
             database.getDocument(id).delete();
         } catch (CouchbaseLiteException e) {
@@ -75,8 +74,7 @@ public class CouchbaseDAO {
         }
     }
 
-    private String updateDocument( String docid, String title, String text, Date time, boolean pri)
-    {
+    private String updateDocument(String docid, String title, String text, Date time, boolean pri) {
         Document document = database.getDocument(docid);
         String newdocid = null;
         Map<String, Object> map = new HashMap<String, Object>();
@@ -118,7 +116,8 @@ public class CouchbaseDAO {
 
         }
     }
-    public void persistList( ArrayList<ToDoItem> list) {
+
+    public void persistList(ArrayList<ToDoItem> list) {
 
         Iterator<ToDoItem> it = list.iterator();
         while (it.hasNext()) {
@@ -127,11 +126,11 @@ public class CouchbaseDAO {
             if (item.isDirty()) {
                 if (item.isNewly()) {
                     item.setDocid(createDocument(item.getTitle(), item.getText(),
-                                                           item.getTimestamp(), item.isHighpri()));
+                            item.getTimestamp(), item.isHighpri()));
                     item.setNewly(false);
                 } else {
                     String newdocid = updateDocument(item.getDocid(), item.getTitle(),
-                                            item.getText(), item.getTimestamp(), item.isHighpri());
+                            item.getText(), item.getTimestamp(), item.isHighpri());
                     item.setDocid(newdocid);
                 }
                 item.setDirty(false);

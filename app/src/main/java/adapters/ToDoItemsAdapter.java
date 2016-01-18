@@ -31,7 +31,7 @@ public class ToDoItemsAdapter extends BaseAdapter implements ListAdapter {
         this.list = list;
         this.context = context;
         this.fm = f;
-        this.dao= CouchbaseDAO.getInstance(context);
+        this.dao = CouchbaseDAO.getInstance(context);
     }
 
     public void showEditDialog(int pos) {
