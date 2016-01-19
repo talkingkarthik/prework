@@ -27,7 +27,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='blob:https%3A//drive.google.com/a54add36-eaf2-423d-82f6-7dc579d4955f' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/talkingkarthik/prework/blob/master/app/src/main/res/drawable/prework%20-%20todo.gif' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
